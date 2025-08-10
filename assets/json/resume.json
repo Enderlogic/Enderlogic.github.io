@@ -5,27 +5,12 @@
     "image": "",
     "email": "yangliu1214@hkbu.edu.hk",
     "phone": "",
-    "url": "https://enderlogic.github.io/",
-    "summary": "",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
-    },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
+    "url": "https://enderlogic.github.io/"
   },
   "work": [
     {
       "name": "Department of Computer Science, Hong Kong Baptist University",
-      "position": "Postdoc",
+      "position": "Postdoctoral Researcher in AI for Science",
       "url": "https://example.com",
       "startDate": "2024-02-01",
       "endDate": "Now",
