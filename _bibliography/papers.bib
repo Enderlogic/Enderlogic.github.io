@@ -110,6 +110,7 @@
 
 @article{jiang2022swsr,
   title={SWSR: A Chinese dataset and lexicon for online sexism detection},
+  abstract={Online sexism has become an increasing concern in social media platforms as it has affected the healthy development of the Internet and can have negative effects in society. While research in the sexism detection domain is growing, most of this research focuses on English as the language and on Twitter as the platform. Our objective here is to broaden the scope of this research by considering the Chinese language on Sina Weibo. We propose the first Chinese sexism dataset – Sina Weibo Sexism Review (SWSR) dataset –, as well as a large Chinese lexicon SexHateLex made of abusive and gender-related terms. We introduce our data collection and annotation process, and provide an exploratory analysis of the dataset characteristics to validate its quality and to show how sexism is manifested in Chinese. The SWSR dataset provides labels at different levels of granularity including (i) sexism or non-sexism, (ii) sexism category and (iii) target type, which can be exploited, among others, for building computational methods to identify and investigate finer-grained gender-related abusive language. We conduct experiments for the three sexism classification tasks making use of state-of-the-art machine learning models. Our results show competitive performance, providing a benchmark for sexism detection in the Chinese language, as well as an error analysis highlighting open challenges needing more research in Chinese NLP. The SWSR dataset and SexHateLex lexicon are publicly available.},
   author={Jiang, Aiqi and Yang, Xiaohan and Liu, Yang and Zubiaga, Arkaitz},
   journal={Online Social Networks and Media,},
   volume={27},
@@ -117,29 +118,53 @@
   year={2022},
   publisher={Elsevier,},
   Abbr = {OSNEM},
-  pdf = {https://arxiv.org/pdf/2108.03070.pdf},
-  Bibtex_show = {true}
+  url = {https://arxiv.org/pdf/2108.03070.pdf},
+  pdf={SWSR: A Chinese dataset and lexicon for online sexism detection.pdf},
+  Bibtex_show = {true},
+  doi={10.1016/j.osnem.2021.100182},
+  dimensions={true},
+  google_scholar_id={NMxIlDl6LWMC}
 }
 
 @inproceedings{liu2023improving,
   abbr={ICLR},
+  abstract={The process of imputation of missing data typically relies on generative and re-
+gression models. These approaches often operate on the unrealistic assumption
+that all of the data features are directly related with one another, and use all of
+the available features to impute missing values. In this paper, we propose a novel
+Markov Blanket discovery approach to determine the optimal feature set for a
+given variable by considering both observed variables and missingness of partially
+observed variables to account for systematic missingness. We then incorporate
+this method to the learning process of the state-of-the-art MissForest imputation
+algorithm, such that it informs MissForest which features to consider to impute
+missing values, depending on the variable the missing value belongs to. Experi-
+ments across different case studies and multiple imputation algorithms show that
+the proposed solution improves imputation accuracy, both under random and sys-
+tematic missingness.},
   bibtex_show = {true},
   Selected = {true}, 
   title={Improving the imputation of missing data with Markov Blanket discovery},
   author={Liu, Yang and Constantinou, Anthony C},
   booktitle={The Eleventh International Conference on Learning Representations},
-  pdf={https://openreview.net/pdf?id=GrpU6dxFmMN},
+  url={https://openreview.net/pdf?id=GrpU6dxFmMN},
   code = {https://github.com/Enderlogic/Markov-Blanket-based-Feature-Selection},
-  year={2023}
+  year={2023},
+  pdf={Improving the imputation of missing data with Markov Blanket discovery.pdf},
+  dimensions={true},
+  google_scholar_id={RGFaLdJalmkC}
 }
 
 @article{constantinou2023open,
   bibtex_show = {true},
   title={Open problems in causal structure learning: A case study of COVID-19 in the UK},
+  abstract={Causal machine learning (ML) algorithms recover graphical structures that tell us something about cause-and-effect relationships. The causal representation provided by these algorithms enables transparency and explainability, which is necessary for decision making in critical real-world problems. Yet, causal ML has had limited impact in practice compared to associational ML. This paper investigates the challenges of causal ML with application to COVID-19 UK pandemic data. We collate data from various public sources and investigate what the various structure learning algorithms learn from these data. We explore the impact of different data formats on algorithms spanning different classes of learning, and assess the results produced by each algorithm, and groups of algorithms, in terms of graphical structure, model dimensionality, sensitivity analysis, confounding variables, predictive and interventional inference. We use these results to highlight open problems in causal structure learning and directions for future research. To facilitate future work, we make all graphs, models, data sets, and source code publicly available online.},
   author={Constantinou, Anthony C and Kitson, Neville K and Liu, Yang and Chobtham, Kiattikun and Amirkhizi, Arian Hashemzadeh and Nanavati, Praharsh A and Mbuvha, Rendani and Petrungaro, Bruno},
   journal={Expert Systems with Applications},
   pages={121069},
-  pdf = {https://pdf.sciencedirectassets.com/271506/1-s2.0-S0957417423X00207/1-s2.0-S0957417423015713/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIDEQiJ%2FHXYnUKb%2FTM4IbC5B9JNaEmm2Si6bn5%2FXHkTlQAiBXBzS79FlAuPxwAcIbz1mXG6O3x19nGjebOCG24QSDxyqzBQhBEAUaDDA1OTAwMzU0Njg2NSIMxt8e53zomdLKnXaoKpAF%2BfafuSdWk4Dusgz%2FH8rGP5921EyZ98afcrg6jqpO9hdaCWM8Ups2WGi2eW9vI6T0tsH1wWurhbd6wmMkvOBpZWbEgBexkKGT9Q7ifYDyhrfu46WfQ3EulfuRTatrTn%2B2ARx%2BjLWB2rlGtC7Yp0jNkbvO%2B8K1fmXqkBwHkFcRPv7xesVxiYbZ8ukvjxR%2BrPD%2BF9TLd3gg0WCYZoaaDyKO76wnK8zgXj%2FwvFQEobrs1mo1J7QemaFKV0ioeLdNDFWEZExcVzYHQ4LhJpVbdny%2BFPSkZ0TBUHkxovB0GKEyBO%2BqYunoS7ITPyo1Jeya%2Fdbo6GpHh5por8ZE98RiYEG%2FYAYu1RUgp6TXEJMnVl008f57oq8u9kYFTcqtZY0ClcuES9Zrj8h3llfRG5Pq7iEPa0gNwlXK3mvLTJXuePWp5e4XAICPX693WmqOGZCVxVuRJN%2FP8pq1a4U0wstpWVDIGZzQGus%2FQBwR99dpt5bEFYcrvwQ6ep3ixwJb71JipVJuInW2CT%2BEU3Ht3Dde6RRHklyVMJMwZJUbxwpli%2B5R%2B7a6E30xRAK3WGdPG83ueIHlZ%2FeOqaL3dbXTMXXZ1l7lEigkj6y9k3CP6D3f4SSplpRx6%2FP8EzuREBwJw9spKuRZWUmeZGPiG3RUCs%2Fz0iJorq7n7MRejcXkx0jJEJz55maE%2BuK%2B4eSRa2YlNb2c3GbPGqrUiHiSz6903YIrDg42LMddgnPGVNUW%2BDCgJoHiynYeXlQccHWxlHJEH0TwTTGREmx8xdFvbvR5zklc4KL%2Bny8%2FOaJtPP%2BwZRDoxGwHJvuietA2VDLEuUp0SaY7qXD39WBKWTUl8LWYP9QmqNRn4cdlZiicejxwaRrChmhfKd8wiOHspgY6sgFUpEPwtQYAuog9cAzXMH7z3OVgGvD3cHZefjXve1NIFHVlD8ekVF%2FYLmdGldqUk2F7Xhx0AF2k5G5Ln7UZz7weIiYrtjeX699JSCcNlU%2BlvfyFRcBqiNsBMKknRPJxGaKCdlaf7SktYh634mjhBe5gV7dP6dxNxU7zpRE8GHFiWvuUTwwRxbBuD6OTd3q2r8UlJipn%2Bhhm3ryASnTx%2ByitfA0BnidLtqaLG9hnrxM%2F7df%2B&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230815T083659Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYYYEHRFLQ%2F20230815%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ba0182dc8e96895eab86e11d67b8b90767497be94301da9184eed37c2dad552b&hash=49b355e86711bb0af01165052a2511a03b8c6529266ee8e1ce5541244d4c5384&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0957417423015713&tid=spdf-27e521c1-637f-4d98-b33a-0972c7d152c3&sid=7e283f281943a3414389c82501b55ae87655gxrqb&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=1d06590754575204045f&rr=7f701cf0fdaf417c&cc=gb},
+  url = {https://pdf.sciencedirectassets.com/271506/1-s2.0-S0957417423X00207/1-s2.0-S0957417423015713/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCUg1wv8wNN7ME1pq0f5PKI4eQWMMP20Q8ySzxfEfDvzAIgPxQU0MjwoDV7xkqYPXe%2BM3mdWKmNvXFJSDI5C3nKS%2BkquwUI0v%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDNWEnpxjMSK5vgKvFiqPBfbiK4EwKe6DTwO8ZULx2PYvEa%2Bi%2Be1bvR7EtaebvOiRB285j5ws5QptnTBwq9qiYazuJ62ibErbE1k%2BoLALtRQrHdI%2FZMhayHsBeWG2vR0h8Y8macrRaqHKgGed6mHw1ASBq1VtkncPIV%2BtyDtBknTPDuGBT%2FRIanbEYJaQc278MMp1UD%2Fo3%2FJHb7k8yDxlSuFUpNh7fQ2gRIcbW0bcrn6G9LYZCur0Q4t%2FncylcdMick%2BxDLWZ9QgIEzPDOYAhEKnIb5YjKFFHdeS3Uus%2F1HKSWJWZ8vQy8ovcaDpJ%2B65WsWSSH4i7ZO82VVUbtF07p9%2B0PLDQ5AEDLgGhavehLhP4I0xOZv9jE9i2jOpVTD9Eg1VAbDw2twNki7G1%2Bl%2FBRH7RrzbtIskRhtm7tWkBwNM3GlWOZRnp8ugvaqS5RxvUxN96cZfEFRZ1%2B1btBk1i1rFo67gnMRbv%2FQQegPN%2BXn4AeYGi5BV8Q81oda8m7s5O8yWdknd4whYXxefEORoZJLg6OZkYjb7O3UI2fTrkWD92NMKWNoreHnHIpr6%2FCUw6B9S%2BgLCJyK9iMWEWUpspbHEWTAsyULuGc9KX3m3nLXyijoW479kQcMUbh2KerIBGX%2FAF%2BrOptwf22QbCgeDZSIb3vQdm2KBmJMdHAmmjhAzQme8UaFGh2pcwHxGXwbJDcmZ3op3z7zSeOwp9nMara7909a2aBU%2B%2FfFeOtXpioSReFaa4KshgwGgE29RpxVw5PA31wBe%2BFWVXJ4W3mB0g6EqHs6Fdtr6VnoOVXyNp865AotgtGLBCBQjqsmmmU2EExeAUSjU%2BeuPrlFAzyvquziLURIObomssqc2FKu%2BlV%2BAAaIftTLA7PyqtYELvE58wtMThxAY6sQGgpgP%2Fx2ewQGwhlPxBjNpOKDDU4ycbcSdreCERjPVh6aglA4tQadad%2FMSIPgWpRCciTqhXZqJMsDIhikFpTOuk6wop4YcTIHeJ7KI%2FDh5z%2BKqKGFG1DevvNA2%2FLvZY7mmHy2ForK0LbVn2o0xSWZ0afXIV3czsGXVy%2Fc5EMoxM7GGklG0P4SlGTBMyXGuC0UnkUAHyOS%2B3FTADzLpd3xn9JNe9OdbYP2eeS8tiuO9yy0o%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250810T102407Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY77ZGFOCW%2F20250810%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=a3154e02b2e2966f4406bd34207808ebf4df12ec79455185da94f84eba5250bb&hash=1ea76254f3908a3a84020b66eb328bae8f5211478ec390d5f7a83570241e8118&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0957417423015713&tid=spdf-0dd36597-bd9d-46ca-a656-0b720d1c19c8&sid=6004d8f495df6847538a5f2331816ba842e0gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=120e5e59010100585e0602&rr=96cec81ae825094e&cc=hk},
   year={2023},
-  publisher={Elsevier}
+  publisher={Elsevier},
+  pdf={Open problems in causal structure learning: A case study of COVID-19 inthe UK},
+  dimensions={true},
+  google_scholar_id={O3NaXMp0MMsC}
 }
