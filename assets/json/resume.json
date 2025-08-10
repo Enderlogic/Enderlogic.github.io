@@ -41,7 +41,7 @@
       "studyType": "PhD",
       "startDate": "2019-09-01",
       "endDate": "2024-01-01",
-      "courses": ["Bayesian network", "Missing values", "Measurement error"]
+      "highlight": ["Bayesian network", "Missing values", "Measurement error"]
     },
    {
       "institution": "University of Edinburgh",
