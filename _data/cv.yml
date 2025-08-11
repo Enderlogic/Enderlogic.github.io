@@ -22,14 +22,15 @@
   type: time_table
   contents:
     - title: PhD
-      institution: Queen Mary University of London
-      year: 2019-09 - 2024-01
+      institution: University of Zurich, Zurich, Switzerland
+      year: 1905
       description:
-        - title: Thesis: Bayesian network structure learning under imperfect data
+        - Description 1.
+        - Description 2.
+        - title: Description 3.
           contents:
-            - Bayesian network
-            - Missing values
-            - Measurement error
+            - Sub-description 1.
+            - Sub-description 2.
     - title: Federal teaching diploma
       institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
       year: 1900
@@ -40,9 +41,13 @@
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 2019
+    - year: 1921
       items:
-        - EPSRC PhD studentship
+        - Nobel Prize in Physics
+        - Matteucci Medal
+    - year: 2029
+      items:
+        - Max Planck Medal
 
 - title: Academic Interests
   type: nested_list
