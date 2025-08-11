@@ -25,39 +25,34 @@
       institution: Queen Mary University of London
       year: 2019-09 - 2024-01
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - title: Bayesian network structure learning under imperfect data
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+            - Missing values
+            - Measurement error
+    - title: Master
+      institution: University of Edinburgh
+      year: 2017-09 - 2018-11
+    - title: Bachelor
+      institution: Beihang University
+      year: 2013-09 - 2017-06
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2019
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+        - EPSRC PhD studentship
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Multi-omics integraion
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Spatial multi-omics
+        - Interpretable modelling
+        - Disentangled representation learning
+    - title: Causality
       items:
-        - Description 1.
-        - Description 2.
+        - Causal discovery
+        - Identification theory
 
