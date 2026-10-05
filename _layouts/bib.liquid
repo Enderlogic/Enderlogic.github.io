@@ -312,14 +312,16 @@
             ></span>
           {% endif %}
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
+            {% capture scholar_citations %}{% google_scholar_citations site.data.socials.scholar_userid entry.google_scholar_id %}{% endcapture %}
+            {% assign scholar_citations = scholar_citations | strip %}
             <a
               href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.data.socials.scholar_userid }}&citation_for_view={{ site.data.socials.scholar_userid }}:{{ entry.google_scholar_id }}"
               aria-label="Google Scholar link"
               role="button"
             >
               <img
-                src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.data.socials.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
-                alt="{% google_scholar_citations site.data.socials.scholar_userid entry.google_scholar_id %} Google Scholar citations"
+                src="https://img.shields.io/badge/scholar-{% if scholar_citations == 'N/A' %}View{% else %}{{ scholar_citations }}{% endif %}-4285F4?logo=googlescholar&labelColor=beige"
+                alt="{% if scholar_citations == 'N/A' %}View citations on Google Scholar{% else %}{{ scholar_citations }} Google Scholar citations{% endif %}"
               >
             </a>
           {% endif %}
