@@ -54,9 +54,11 @@
       {% assign author_array_size = entry.author_array | size %}
 
       {% assign author_array_limit = author_array_size %}
-      {% if site.max_author_limit and author_array_size > site.max_author_limit %}
-        {% assign author_array_limit = site.max_author_limit %}
-      {% endif %}
+      {% unless page.show_all_authors %}
+        {% if site.max_author_limit and author_array_size > site.max_author_limit %}
+          {% assign author_array_limit = site.max_author_limit %}
+        {% endif %}
+      {% endunless %}
 
       {%- for author in entry.author_array limit: author_array_limit -%}
         {% assign author_is_self = false %}
@@ -110,20 +112,33 @@
         {%- endif -%}
         {% assign more_authors_show = '' %}
         {%- for author in entry.author_array offset: author_array_limit -%}
-          {% assign more_authors_show = more_authors_show | append: author.first | append: ' ' | append: author.last %}
+          {%- assign hidden_author_last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' | downcase | remove_accents -%}
+          {%- assign hidden_coauthor_url = null -%}
+          {%- for coauthor in site.data.coauthors[hidden_author_last] -%}
+            {%- if coauthor.firstname contains author.first -%}
+              {%- assign hidden_coauthor_url = coauthor.url -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- capture hidden_author_name -%}{{ author.first | escape }} {{ author.last | escape }}{%- endcapture -%}
+          {%- assign hidden_author_name = hidden_author_name | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+          {%- capture hidden_author -%}
+            {%- if hidden_coauthor_url -%}<a href="{{ hidden_coauthor_url | escape }}">{{ hidden_author_name }}</a>{%- else -%}{{ hidden_author_name }}{%- endif -%}
+          {%- endcapture -%}
+          {% assign more_authors_show = more_authors_show | append: hidden_author %}
           {% unless forloop.last %}
             {% assign more_authors_show = more_authors_show | append: ', ' %}
           {% endunless %}
         {%- endfor -%}
-        {%- assign more_authors_show = more_authors_show | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
         , and
         <span
           class="more-authors"
           title="click to view {{ more_authors_hide }}"
           onclick="
+              if ($(event.target).closest('a').length) return;
               var element = $(this);
               element.attr('title', '');
-              var more_authors_text = element.text() == '{{ more_authors_hide }}' ? '{{ more_authors_show }}' : '{{ more_authors_hide }}';
+              var more_authors_text = element.text() == {{ more_authors_hide | jsonify | escape }} ? {{ more_authors_show | jsonify | escape }} : {{ more_authors_hide | jsonify | escape }};
               var cursorPosition = 0;
               var textAdder = setInterval(function(){
                 element.html(more_authors_text.substring(0, cursorPosition + 1));
