@@ -9,6 +9,7 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_data/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -39,6 +40,7 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_data/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -83,6 +85,17 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
+      - name: Restore saved Scholar counts
+        if: github.event_name != 'pull_request'
+        uses: actions/cache@v4
+        with:
+          path: .cache/google-scholar
+          key: scholar-counts-v1-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            scholar-counts-v1-${{ github.repository_id }}-
+      - name: Refresh Scholar profile counts
+        if: github.event_name != 'pull_request'
+        run: bundle exec ruby _scripts/update_scholar_citations.rb
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
