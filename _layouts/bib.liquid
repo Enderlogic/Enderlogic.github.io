@@ -268,14 +268,22 @@
     </div>
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}
-      {% if entry.altmetric and entry.altmetric != 'false' %}
-        {% assign entry_has_altmetric_badge = true %}
-      {% endif %}
+      {% unless entry.altmetric == 'false' or entry.altmetric == false %}
+        {% if entry.doi or entry.arxiv or entry.eprint or entry.pmid or entry.isbn %}
+          {% assign entry_has_altmetric_badge = true %}
+        {% elsif entry.altmetric and entry.altmetric != 'true' and entry.altmetric != true %}
+          {% assign entry_has_altmetric_badge = true %}
+        {% endif %}
+      {% endunless %}
 
       {% assign entry_has_dimensions_badge = false %}
-      {% if entry.dimensions and entry.dimensions != 'false' %}
-        {% assign entry_has_dimensions_badge = true %}
-      {% endif %}
+      {% unless entry.dimensions == 'false' or entry.dimensions == false %}
+        {% if entry.doi or entry.pmid %}
+          {% assign entry_has_dimensions_badge = true %}
+        {% elsif entry.dimensions and entry.dimensions != 'true' and entry.dimensions != true %}
+          {% assign entry_has_dimensions_badge = true %}
+        {% endif %}
+      {% endunless %}
 
       {% assign entry_has_google_scholar_badge = false %}
       {% if entry.google_scholar_id %}
@@ -293,14 +301,14 @@
               class="altmetric-embed"
               data-badge-type="2"
               data-badge-popover="right"
-              {% if entry.altmetric != blank and entry.altmetric != 'true' %}
+              {% if entry.altmetric and entry.altmetric != 'true' and entry.altmetric != true %}
                 data-altmetric-id="{{ entry.altmetric }}"
+              {% elsif entry.doi %}
+                data-doi="{{ entry.doi }}"
               {% elsif entry.arxiv %}
                 data-arxiv-id="{{ entry.arxiv }}"
               {% elsif entry.eprint %}
                 data-arxiv-id="{{ entry.eprint }}"
-              {% elsif entry.doi %}
-                data-doi="{{ entry.doi }}"
               {% elsif entry.pmid %}
                 data-pmid="{{ entry.pmid }}"
               {% elsif entry.isbn %}
@@ -311,7 +319,7 @@
           {% if site.enable_publication_badges.dimensions and entry_has_dimensions_badge %}
             <span
               class="__dimensions_badge_embed__"
-              {% if entry.dimensions != blank and entry.dimensions != 'true' %}
+              {% if entry.dimensions and entry.dimensions != 'true' and entry.dimensions != true %}
                 data-id="{{ entry.dimensions }}"
               {% elsif entry.doi %}
                 data-doi="{{ entry.doi }}"
