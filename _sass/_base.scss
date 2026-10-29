@@ -739,6 +739,8 @@ footer.sticky-bottom {
       }
 
       .abbr {
+        flex: 0 0 11rem;
+        max-width: 11rem;
         margin-bottom: 0.5rem;
 
         abbr {
@@ -746,6 +748,10 @@ footer.sticky-bottom {
           background-color: var(--global-theme-color);
           margin-bottom: 0.5rem;
           color: var(--global-card-bg-color) !important;
+          white-space: normal;
+          overflow-wrap: anywhere;
+          line-height: 1.2;
+          padding: 0.35em 0.6em;
 
           a {
             color: white;
@@ -759,6 +765,14 @@ footer.sticky-bottom {
         .award {
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
+        }
+      }
+
+      @media (min-width: 576px) {
+        .publication-details {
+          flex: 1 1 0;
+          min-width: 0;
+          max-width: calc(100% - 11rem);
         }
       }
 
